@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include <math.h>
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
@@ -77,7 +77,7 @@ bool timer_callback(__unused struct repeating_timer *t)
 
 int main()
 {
-    //stdio_init_all(); uncomment for usb
+    //stdio_init_all();
     gpio_set_function(PIN_a, GPIO_FUNC_PWM);
     gpio_set_function(PIN_b, GPIO_FUNC_PWM);
     gpio_set_function(PIN_c, GPIO_FUNC_PWM);
@@ -140,4 +140,5 @@ int main()
         sleep_ms(1000);
     }
 }
+
 
