@@ -45,7 +45,7 @@ uint ic;
 float half;
 
 #define LUT 512
-const int LUT_ = LUT;
+const uint LUT_ = LUT;
 float sine[LUT];
 
 const float phase_to_i = LUT_/(2.0f*M_PI);
@@ -77,7 +77,7 @@ bool timer_callback(__unused struct repeating_timer *t)
 
 int main()
 {
-    stdio_init_all();
+    //stdio_init_all(); uncomment for usb
     gpio_set_function(PIN_a, GPIO_FUNC_PWM);
     gpio_set_function(PIN_b, GPIO_FUNC_PWM);
     gpio_set_function(PIN_c, GPIO_FUNC_PWM);
@@ -136,10 +136,8 @@ int main()
 
 
     while (true) {
-        printf("Output frequency: %i Hz\n", output_frequency);
-        printf("PWM frequency: %i Hz\n", PWM_freq);
-        printf("Update interval: %i us\n", timer_int);
-        printf("===========================\n");
+        //main loop
         sleep_ms(1000);
     }
 }
+
